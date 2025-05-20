@@ -183,6 +183,15 @@
 }
 
 @layer layout {
+  .flow > * + * {
+    margin-top: var(--flow-spacer, 1rem);
+  }
+
+  .grid-flow {
+    display: grid;
+    gap: var(--grid-flow-gap, 1rem);
+  }
+
   .equal-columns {
     display: grid;
     gap: var(--equal-columns-gap, 1rem);
@@ -202,19 +211,6 @@
     }
   }
 
-  .section {
-    --padding: 3.75rem;
-    padding-block: var(--padding);
-
-    @media (width > 760px) {
-      --padding: 8rem;
-
-      &[data-padding="compact"] {
-        --padding: 4.5rem;
-      }
-    }
-  }
-
   .wrapper {
     --wrapper-max-width: 1330px;
 
@@ -225,12 +221,24 @@
     box-sizing: content-box;
   }
 
-  &[data-width="narrow"] {
+  .wrapper[data-width="narrow"] {
     max-width: 720px;
   }
 
-  &[data-width="wide"] {
+  .wrapper[data-width="wide"] {
     max-width: 1330px;
+  }
+
+  .section {
+    padding-block: 3.75rem;
+
+    @media (width > 760px) {
+      padding-block: 8rem;
+
+      &[data-padding="compact"] {
+        padding-block: 4.5rem;
+      }
+    }
   }
 }
 
