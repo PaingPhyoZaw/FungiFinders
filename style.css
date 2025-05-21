@@ -255,7 +255,8 @@
     align-items: center;
   }
 
-  [aria-controls="primary-navigation"] {
+  [aria-controls="primary-nav"] {
+    display: none;
     z-index: 100;
     background-color: transparent;
     border: 0;
@@ -280,6 +281,8 @@
     }
 
     @media (width < 760px) {
+      display: none;
+
       position: absolute;
       top: 0;
       right: 0;
@@ -300,6 +303,16 @@
         padding-block-start: 1.5rem;
         border-top: 2px solid var(--background-accent-light);
       }
+    }
+  }
+
+  @media (width < 760px) {
+    [aria-expanded="true"] + .primary-navigation {
+      display: block;
+    }
+
+    [aria-controls="primary-nav"] {
+      display: block;
     }
   }
 
