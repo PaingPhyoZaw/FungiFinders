@@ -266,6 +266,25 @@
       text-decoration: none;
     }
   }
+
+  .hero {
+    background-image: url("/assets/hero.webp");
+    background-size: cover;
+    background-position: center;
+    font-size: var(--font-size-md);
+    color: var(--text-high-contrast);
+    text-align: center;
+  }
+
+  .hero--title {
+    font-size: var(--font-size-heading-lg);
+
+    span {
+      font-size: var(--font-size-heading-xl);
+      color: var(--text-brand);
+      display: block;
+    }
+  }
 }
 
 @layer utilities {
