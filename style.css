@@ -227,6 +227,46 @@
     }
   }
 
+  .bento-grid {
+    --card-title-color: var(--text-high-contrast);
+    display: grid;
+    gap: 1rem;
+
+    grid-template-areas:
+      "card-one"
+      "card-two"
+      "card-three"
+      "card-four";
+
+    @media (width > 600px) {
+      grid-template-areas:
+        "card-one card-two"
+        "card-three card-four";
+    }
+
+    @media (width > 900px) {
+      grid-template-areas:
+        "card-one card-two card-three"
+        "card-four card-four card-three";
+    }
+  }
+
+  .card:nth-child(1) {
+    grid-area: card-one;
+  }
+
+  .card:nth-child(2) {
+    grid-area: card-two;
+  }
+
+  .card:nth-child(3) {
+    grid-area: card-three;
+  }
+
+  .card:nth-child(4) {
+    grid-area: card-four;
+  }
+
   .wrapper {
     --wrapper-max-width: 1330px;
 
