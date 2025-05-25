@@ -198,8 +198,17 @@
     flex-wrap: wrap;
   }
 
-  .grid-auto-fit {
+  /* .grid-auto-fit {
     --auto-fit-min-col-size: 250px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(var(--auto-fit-min-col-size), 100%), 1fr)
+    );
+  } */
+
+  .gird-auto-fit {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(
